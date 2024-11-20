@@ -18,8 +18,13 @@ function changeStyleBasedOnTime() {
        //* Entre 18h et 5h, on affiche "Bonsoir !" en injectant du code dans l'id say-hi avec le code suivant :
         //* -> sayHi.textContent = 'Bonsoir !';
         //* la variable currentHour contient l'heure actuelle
-
-
+    function salutations(currentHour){
+        if(currentHour <= 5 && currentHour >= 18)
+            sayHi.textContent = "Good evening"
+    } else{
+        sayHi.textContent = 'Good Morning'
+    }
+    salutations(currentHour)
 
     //**! /!\ Ne pas toucher /!\ 
     //**! /!\ DÉBUT /!\
