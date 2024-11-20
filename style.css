@@ -5,22 +5,27 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    color: white;
+
 }
 
 #time-display {
-    font-size: 2rem;
+    font-size: 4em;
+    font-family: Arial, sans-serif;
 }
 
-.aurore {
+.dawn {
     background-image: url(https://i.pinimg.com/enabled_lo_mid/474x/69/2a/c5/692ac5940d9e8e8c5ae9c811dc279151.jpg);
+
 }
 
-.matin {
+.morning {
     background-image: url(https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW9ybmluZ3xlbnwwfHwwfHx8MA%3D%3D);
 }
 
-.apres-midi {
-    background-image: url(https://images.unsplash.com/photo-1530973954043-dc7f4d22117c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFmdGVybm9vbnxlbnwwfHwwfHx8MA%3D%3D);
+.afternoon {
+    background-image: url(https://i.pinimg.com/enabled_lo_mid/736x/80/83/3e/80833e4c4829e18d6a3fcde043586679.jpg);
+    background-size: cover;
 }
 
 .soiree {
