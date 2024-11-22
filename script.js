@@ -14,16 +14,16 @@ function changeStyleBasedOnTime() {
         //* Entre 5h et 18h, on affiche "Bonjour !" en injectant du code dans l'id say-hi avec le code suivant :
         //* -> sayHi.textContent = 'Bonjour !';
         //* la variable currentHour contient l'heure actuelle
-    if (currentHour >= 5 && currentHour <= 12){
+    if (currentHour >= 5 && currentHour < 12){
         sayHi.textContent = 'Good Morning'
-    }else if (currentHour >= 12 && currentHour <= 18){
+    }else if (currentHour >= 12 && currentHour < 18){
 
         sayHi.textContent = 'Good afternoon'
     }
        //* Entre 18h et 5h, on affiche "Bonsoir !" en injectant du code dans l'id say-hi avec le code suivant :
         //* -> sayHi.textContent = 'Bonsoir !';
         //* la variable currentHour contient l'heure actuelle
-    else{sayHi.textContent = "Good Evening"}
+    else{sayHi.textContent = 'Good Evening'}
 
     //**! /!\ Ne pas toucher /!\ 
     //**! /!\ DÉBUT /!\
@@ -31,7 +31,7 @@ function changeStyleBasedOnTime() {
     let element = document.getElementById('time-based-style'); 
 
     // On réinitialise les classes
-    element.classList.remove('dawn', 'morning', 'afternoon', 'soiree', 'nuit' );
+    element.classList.remove('dawn', 'morning', 'afternoon', 'evening', 'night' );
     //**! /!\ FIN /!\
 
     //**! ICI on veut une condition pour appliquer la classe appropriée en fonction de la variable currentHour (l'heure actuelle) */
@@ -47,16 +47,16 @@ function changeStyleBasedOnTime() {
             //* Après-midi : 12h-18h
             //* Soirée : 18h-22h
             //* Nuit : 22h-5h
-            if (currentHour >= 5 && currentHour <=8){
+            if (currentHour >= 5 && currentHour < 8){
                 element.classList.add('dawn');
-            }else if (currentHour > 8 && currentHour <= 12){
+            }else if (currentHour >= 8 && currentHour < 12){
                 element.classList.add('morning')
-            }else if (currentHour > 12 && currentHour <= 18){
+            }else if (currentHour >= 12 && currentHour < 18){
                 element.classList.add('afternoon')
-            }else if (currentHour > 18 && currentHour <= 22){
-                element.classList.add('Soirée')
-            }else if (currentHour >22 && currentHour <= 24){
-                element.classList.add('Nuit')
+            }else if (currentHour >= 18 && currentHour < 22){
+                element.classList.add('evening')
+            }else if (currentHour >= 18 && currentHour < 24){
+                element.classList.add('night')
             }
 
 } // Fin de la première fonction
@@ -89,3 +89,21 @@ setInterval(updateClock, 1000); // 1000 ms = 1 seconde
 // Appel de la fonction updateClock
 updateClock();
 //**! /!\ FIN /!\
+
+// Mes ajouts pour rendre la page plus intéressante
+
+function displayRandomQuote() {
+    const quotes = [
+        "Every morning is a new beginning.",
+        "Make today amazing!",
+        "Don't watch the clock; do what it does. Keep going.",
+        "The evening is a pause before new opportunities.",
+        "Dream big under the starry sky."
+    ];
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById('motivational-quote').textContent = quotes[randomIndex];
+}
+
+// Appel initial
+displayRandomQuote();
+
